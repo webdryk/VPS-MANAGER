@@ -1,7 +1,7 @@
 import socket
 import requests
 import threading
-import logging
+import logging 
 from dnslib import DNSRecord, DNSHeader, DNSQuestion, RR, A
 from typing import Tuple, Optional
 from urllib.parse import quote

@@ -14,7 +14,7 @@ def wireguard(port):
         click.echo(f"WireGuard server started on port {port}")
         while True:
             pass
-
+ 
 @cli.command()
 @click.option('--port', default=1194, help='OpenVPN port')
 @click.option('--protocol', default='udp', help='Protocol (udp/tcp)')
@@ -37,3 +37,5 @@ def shadowsocks(port, password):
 
 if __name__ == '__main__':
     cli()
+
+
