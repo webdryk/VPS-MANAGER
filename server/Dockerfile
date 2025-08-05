@@ -15,8 +15,9 @@ RUN apt-get update && apt-get install -y \
     procps \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy the entire server package
+# Copy both server and utils packages
 COPY server/ ./server/
+COPY utils/ ./utils/
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r server/requirements.txt
