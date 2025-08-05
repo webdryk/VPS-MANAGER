@@ -16,6 +16,7 @@ COPY client/ .
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
+    netcat-openbsd \ 
     iptables \
     iproute2 \
     net-tools \
