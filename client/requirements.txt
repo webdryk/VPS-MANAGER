@@ -1,0 +1,10 @@
+cryptography>=3.4
+requests>=2.25
+psutil>=5.8
+backoff>=1.10
+click>=8.0
+pyroute2>=0.6
+python-iptables>=0.14.0
+pyopenssl>=20.0
+fernet>=1.0
+dnspython>=2.1.0

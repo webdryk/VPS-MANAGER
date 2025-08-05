@@ -1,0 +1,6 @@
+cryptography>=3.4
+requests>=2.25
+dnslib>=0.9
+python-iptables>=1.0
+psutil>=5.8
+backoff>=1.10
