@@ -1,8 +1,7 @@
 #!/bin/bash
 
-# Initialize configs
-echo "Initializing services..."
-cd /app || exit 1
+# Initialize environment
+export PYTHONPATH=/app
 
 # Start services
 declare -A services=(
@@ -12,6 +11,8 @@ declare -A services=(
     ["socks5"]=$ENABLE_SOCKS5
     ["doh"]=$ENABLE_DOH
 )
+
+cd /app || exit 1
 
 for service in "${!services[@]}"; do
     if [ "${services[$service]}" = "true" ]; then

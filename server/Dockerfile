@@ -2,7 +2,7 @@ FROM python:3.9-slim
 
 WORKDIR /app
 
-# Install system dependencies including build tools
+# Install system dependencies
 RUN apt-get update && apt-get install -y \
     gcc \
     python3-dev \
@@ -15,14 +15,13 @@ RUN apt-get update && apt-get install -y \
     procps \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements first to leverage Docker cache
-COPY server/requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+# Copy the entire server package
+COPY server/ ./server/
 
-# Copy the rest of the application
-COPY server/ .
+# Install Python dependencies
+RUN pip install --no-cache-dir -r server/requirements.txt
 
-# Make sure Python can find our modules
+# Set Python path to include /app
 ENV PYTHONPATH=/app
 
 # Entrypoint
